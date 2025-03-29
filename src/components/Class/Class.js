@@ -4,13 +4,10 @@ import React, { useState, useEffect } from "react";
 function Class(props) {
 
     const [classInfo, setClassInfo] = useState({});
-    const url = "https://anteaterapi.com/v2/rest/courses/";
-    const apiKey = "mEaX5T-3H1y6M7pT9UpQI9Se1dVpihZ2Oi4reZ9xT1I.sk.m5ms9v4v888u4mguoad65ud6";
-    const graphQL = "https://anteaterapi.com/v2/graphql/";
-
+    
     useEffect(() => {
         const fetchData = async () => {
-            const response = await fetch(url + props.name);
+            const response = await fetch(process.env.URL + props.name);
             const data = await response.json();
             setClassInfo(data);
             console.log(classInfo);
