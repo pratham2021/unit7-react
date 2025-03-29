@@ -7,7 +7,6 @@ function ClassGraphQL(props) {
 
     useEffect(() => {
         const fetchData = async () => {
-            require('dotenv').config();
 
             const query = `
                 query {
@@ -19,7 +18,7 @@ function ClassGraphQL(props) {
                 }
             `
 
-            const response = await fetch(process.env.GRAPH_QL_URL, {
+            const response = await fetch(process.env.REACT_APP_GRAPH_QL_URL, {
                 method: "POST",
                 body: JSON.stringify({query}),
                 headers: {

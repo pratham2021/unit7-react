@@ -7,8 +7,7 @@ function Class(props) {
     
     useEffect(() => {
         const fetchData = async () => {
-            require('dotenv').config();
-            const response = await fetch(process.env.URL + props.name);
+            const response = await fetch(process.env.REACT_APP_URL + props.name);
             const data = await response.json();
             console.log(data);
             setClassInfo(data);
