@@ -7,10 +7,11 @@ function Class(props) {
     
     useEffect(() => {
         const fetchData = async () => {
+            require('dotenv').config();
             const response = await fetch(process.env.URL + props.name);
             const data = await response.json();
+            console.log(data);
             setClassInfo(data);
-            console.log(classInfo);
         }
 
         fetchData();

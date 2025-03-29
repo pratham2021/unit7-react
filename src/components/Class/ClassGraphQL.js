@@ -4,9 +4,11 @@ import React, { useState, useEffect } from "react";
 function ClassGraphQL(props) {
 
     const [classInfo, setClassInfo] = useState({});
-    
+
     useEffect(() => {
         const fetchData = async () => {
+            require('dotenv').config();
+
             const query = `
                 query {
                     course(id:"${props.name}") {
